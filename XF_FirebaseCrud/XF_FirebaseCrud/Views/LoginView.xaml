@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:XF_FirebaseCrud.ViewModels"
+             x:Class="XF_FirebaseCrud.Views.LoginView">
+
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel/>
+    </ContentPage.BindingContext>
+
+    <Grid Padding="10" VerticalOptions="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackLayout Grid.Row="0" VerticalOptions="Center">
+            <Label Text="Login"
+                   TextColor="Purple"
+                   FontSize="30"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"/>
+        </StackLayout>
+
+        <StackLayout Grid.Row="1" Spacing="5">
+            <Entry Placeholder="Nome do Usuário"
+                   Text="{Binding Username}"/>
+
+            <Entry Placeholder="Senha do Usuário"
+                   Text="{Binding Password}"
+                   IsPassword= "true"/>
+
+            <Button Text="Login"
+                    HorizontalOptions="Center"
+                    BackgroundColor="Black"
+                    TextColor="White"
+                    WidthRequest="300"
+                    HeightRequest="40"
+                    Command="{Binding LoginCommand}"/>
+
+            <Label Text="Novo Usuário ?"
+                   FontAttributes="Bold"
+                   TextColor="Purple"/>
+
+            <Button Text="Register"
+                    HorizontalOptions="Center"
+                    BackgroundColor="DarkSlateGray"
+                    TextColor="White"
+                    WidthRequest="300"
+                    HeightRequest="40"
+                    Command="{Binding RegisterCommand}"/>
+        </StackLayout>
+    </Grid>
+    
+    
+</ContentPage>
