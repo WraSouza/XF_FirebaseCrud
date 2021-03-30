@@ -2,11 +2,65 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XF_FirebaseCrud.Views.ContatosView">
-    <ContentPage.Content>
+    <!--<ContentPage.Content>
         <StackLayout>
             <Label Text="Contatos a Serem Exibidos"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
         </StackLayout>
-    </ContentPage.Content>
+    </ContentPage.Content>-->
+    <StackLayout>
+        <StackLayout>
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Start">
+                <Label Margin="0,0,0,10"
+                       Text="Firebase Realtime Database"
+                       FontAttributes="Bold"
+                       FontSize="Large"
+                       HorizontalTextAlignment="Center"
+                       TextColor="Indigo"/>
+                <Entry x:Name="txtId" Placeholder="Id"></Entry>
+                <Entry x:Name="txtNome" Placeholder="Informe o Nome"></Entry>
+                <Entry x:Name="txtEmail" Placeholder="Informe o Email"></Entry>
+
+                <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                    <Button x:Name="btnIncluir"
+                            WidthRequest="200" 
+                            BackgroundColor="Aqua"
+                            Clicked="btnIncluir_Clicked"
+                            Text="Incluir"/>
+                    <Button x:Name="btnExibir"
+                            WidthRequest="200"
+                            BackgroundColor="Gainsboro"
+                            Clicked="btnExibir_Clicked"
+                            Text="Exibir"/>
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                    <Button x:Name="btnAtualizar"
+                            WidthRequest="200" 
+                            BackgroundColor="YellowGreen"
+                            Clicked="btnAtualizar_Clicked"
+                            Text="Incluir"/>
+                    <Button x:Name="btnDeletar"
+                            WidthRequest="200"
+                            BackgroundColor="Salmon"
+                            Clicked="btnDeletar_Clicked"
+                            Text="Exibir"/>
+                </StackLayout>
+
+                <CollectionView x:Name="listaContatos" BackgroundColor="AntiqueWhite">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout WidthRequest="200" Orientation="Horizontal" Padding="0,5,0,5" HeightRequest="50">
+                                <Label Text="{Binding Nome}" VerticalOptions="Center"/>
+                                <Label Text="{Binding Email}" VerticalOptions="Center"/>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+    
 </ContentPage>
